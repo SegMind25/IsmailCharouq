@@ -32,16 +32,36 @@
             --color-accent: #d69e2e;
             --color-accent-light: #ecc94b;
             --color-accent-dark: #b7791f;
-            
+
             --color-text-primary: #1a202c;
             --color-text-secondary: #4a5568;
             --color-text-muted: #718096;
             --color-text-light: #f7fafc;
-            
+
             --color-bg-primary: #ffffff;
             --color-bg-secondary: #f8fafc;
             --color-bg-tertiary: #edf2f7;
             --color-bg-dark: #1a202c;
+        }
+
+        /* Dark Mode Colors */
+        [data-theme="dark"] {
+            --color-primary: #63b3ed;
+            --color-primary-light: #90cdf4;
+            --color-primary-dark: #4299e1;
+            --color-accent: #f6e05e;
+            --color-accent-light: #faf089;
+            --color-accent-dark: #ecc94b;
+
+            --color-text-primary: #f7fafc;
+            --color-text-secondary: #e2e8f0;
+            --color-text-muted: #a0aec0;
+            --color-text-light: #1a202c;
+
+            --color-bg-primary: #1a202c;
+            --color-bg-secondary: #2d3748;
+            --color-bg-tertiary: #4a5568;
+            --color-bg-dark: #000000;
             
             /* Typography */
             --font-heading: 'Playfair Display', Georgia, serif;
@@ -308,6 +328,47 @@
             height: 2px;
             background-color: var(--color-primary);
             transition: transform var(--transition-base), opacity var(--transition-base);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-bg-tertiary);
+            color: var(--color-text-primary);
+            transition: all var(--transition-base);
+            margin-left: var(--space-md);
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle .moon-icon {
+            display: block;
+        }
+
+        [data-theme="dark"] .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        [data-theme="dark"] .theme-toggle .moon-icon {
+            display: none;
         }
 
         /* ============================================
@@ -1749,31 +1810,31 @@
                 <li><a href="#testimonials" class="navbar-link">Testimonials</a></li>
                 <li><a href="#contact" class="navbar-cta">Contact Me</a></li>
             </ul>
-            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div style="display: flex; align-items: center;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
-
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-    </button>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -2819,6 +2880,35 @@
                     trackEvent('Navigation', 'Click', link.getAttribute('href'));
                 });
             });
+
+            // ============================================
+            // THEME TOGGLE (DARK/LIGHT MODE)
+            // ============================================
+            const themeToggle = document.getElementById('themeToggle');
+            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+            // Check for saved theme preference or default to system preference
+            const currentTheme = localStorage.getItem('theme') || 
+                                (prefersDarkScheme.matches ? 'dark' : 'light');
+
+            // Apply the theme on page load
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+
+            // Theme toggle functionality
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                    const newTheme = isDark ? 'light' : 'dark';
+                    
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    
+                    // Track theme change event
+                    trackEvent('Theme', 'Toggle', newTheme);
+                });
+            }
 
             // ============================================
             // INITIALIZATION
