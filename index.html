@@ -1863,6 +1863,136 @@
                 height: 48px;
             }
         }
+
+        /* Image Zoom Hint */
+        .testimonial-image {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .image-zoom-hint {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-sm);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-full);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            pointer-events: none;
+        }
+
+        .testimonial-image:hover .image-zoom-hint {
+            opacity: 1;
+        }
+
+        .image-zoom-hint svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .image-zoom-hint span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Image Modal/Lightbox */
+        .image-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: var(--space-lg);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .image-modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .image-modal-caption {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: var(--space-lg);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background var(--transition-base);
+        }
+
+        .image-modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .image-modal-close svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .image-modal-close {
+                top: -50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -2333,16 +2463,25 @@
                 <div class="testimonial-card reveal">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">
-                        Dr. Lhoussine Qasserras is an outstanding University Professor and TESOL Trainer. His expertise in language education and dedication to student success are truly remarkable.
+                        Reese Hollister brings a unique perspective as a Historian, Language Learner, and Educator. His insights into language acquisition and teaching methodologies are invaluable.
                     </p>
-                    <div class="testimonial-image">
-                        <img src="1stComment.png" alt="Comment from Dr. Lhoussine Qasserras">
+                    <div class="testimonial-image" onclick="openImageModal('2ndComment.png', 'Reese Hollister - Historian, Language Learner, Educator')">
+                        <img src="2ndComment.png" alt="Comment from Reese Hollister">
+                        <div class="image-zoom-hint">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                            <span>Click to zoom</span>
+                        </div>
                     </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">LQ</div>
+                        <div class="testimonial-avatar">RH</div>
                         <div class="testimonial-info">
-                            <h4>Dr. Lhoussine Qasserras</h4>
-                            <p>University Professor & TESOL Trainer</p>
+                            <h4>Reese Hollister</h4>
+                            <p>Historian, Language Learner, Educator</p>
                             <div class="testimonial-rating">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -2352,16 +2491,25 @@
                 <div class="testimonial-card reveal reveal-delay-1">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">
-                        Reese Hollister brings a unique perspective as a Historian, Language Learner, and Educator. His insights into language acquisition and teaching methodologies are invaluable.
+                        Dr. Lhoussine Qasserras is an outstanding University Professor and TESOL Trainer. His expertise in language education and dedication to student success are truly remarkable.
                     </p>
-                    <div class="testimonial-image">
-                        <img src="2ndComment.png" alt="Comment from Reese Hollister">
+                    <div class="testimonial-image" onclick="openImageModal('1stComment.png', 'Dr. Lhoussine Qasserras - University Professor & TESOL Trainer')">
+                        <img src="1stComment.png" alt="Comment from Dr. Lhoussine Qasserras">
+                        <div class="image-zoom-hint">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                            <span>Click to zoom</span>
+                        </div>
                     </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">RH</div>
+                        <div class="testimonial-avatar">LQ</div>
                         <div class="testimonial-info">
-                            <h4>Reese Hollister</h4>
-                            <p>Historian, Language Learner, Educator</p>
+                            <h4>Dr. Lhoussine Qasserras</h4>
+                            <p>University Professor & TESOL Trainer</p>
                             <div class="testimonial-rating">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -2978,6 +3126,53 @@
                 });
             }
         })();
+
+        // Image Modal Functions
+        function openImageModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on background click
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
     </script>
+
+    <!-- Image Modal/Lightbox -->
+    <div class="image-modal" id="imageModal" onclick="closeImageModal()" role="dialog" aria-modal="true" aria-label="Image zoom modal">
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <button class="image-modal-close" onclick="closeImageModal()" aria-label="Close modal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18"></path>
+                    <path d="M6 6l12 12"></path>
+                </svg>
+            </button>
+            <img src="" alt="Zoomed view" id="modalImage">
+            <p class="image-modal-caption" id="modalCaption"></p>
+        </div>
+    </div>
 </body>
 </html>
