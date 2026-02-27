@@ -876,6 +876,14 @@
             box-shadow: var(--shadow-2xl);
         }
 
+        .certificate-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: var(--color-bg-tertiary);
+            border-bottom: 1px solid var(--color-bg-tertiary);
+        }
+
         .certificate-badge {
             width: 100%;
             aspect-ratio: 1;
@@ -952,6 +960,12 @@
 
         .certificate-holder svg {
             flex-shrink: 0;
+        }
+
+        .certificate-date {
+            font-size: 0.8125rem;
+            color: var(--color-text-muted);
+            margin-top: var(--space-sm);
         }
 
         /* ============================================
@@ -1942,71 +1956,51 @@
             </div>
             <div class="certificates-grid">
                 <div class="certificate-card reveal">
-                    <div class="certificate-badge">
-                        <div class="certificate-icon">🎓</div>
-                        <div class="certificate-name">TESOL Certificate</div>
-                    </div>
+                    <img src="CamScanner_02-11-2024_21.02.jpg" alt="TESOL Study Day - Classroom Management and Discipline Problems" class="certificate-image" loading="lazy">
                     <div class="certificate-info">
-                        <h3 class="certificate-title">Teaching English as a Second Language</h3>
-                        <p class="certificate-issuer">American TESOL Academy</p>
-                        <p class="certificate-holder">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Ismail CHAROUQ
-                        </p>
+                        <h3 class="certificate-title">Classroom Management and Discipline Problems</h3>
+                        <p class="certificate-issuer">American TESOL Academy & CALLIOPE</p>
+                        <p class="certificate-date">February 11, 2024 • 4 Hours</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal reveal-delay-1">
-                    <div class="certificate-badge">
-                        <div class="certificate-icon">🏅</div>
-                        <div class="certificate-name">Intermediate 6 - Unit 1</div>
-                    </div>
+                    <img src="CamScanner_04-21-2024_21.52.jpg" alt="5th Rabat International ELT Conference Certificate" class="certificate-image" loading="lazy">
                     <div class="certificate-info">
-                        <h3 class="certificate-title">English Language Proficiency Badge</h3>
-                        <p class="certificate-issuer">American Language Center</p>
-                        <p class="certificate-holder">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Ismail CHAROUQ
-                        </p>
+                        <h3 class="certificate-title">Beyond Borders: Global Perspectives on Innovation in ELT</h3>
+                        <p class="certificate-issuer">American TESOL Academy, Global Bus Foundation & CALLIOPE</p>
+                        <p class="certificate-date">April 21-22, 2024 • 12 Hours</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal reveal-delay-2">
-                    <div class="certificate-badge">
-                        <div class="certificate-icon">🏅</div>
-                        <div class="certificate-name">Intermediate 6 - Unit 2</div>
-                    </div>
+                    <img src="IMG-20240302-WA0056.jpg" alt="Strategies for Mixed-Abilities in Teenage Classrooms Certificate" class="certificate-image" loading="lazy">
                     <div class="certificate-info">
-                        <h3 class="certificate-title">English Language Proficiency Badge</h3>
-                        <p class="certificate-issuer">American Language Center</p>
-                        <p class="certificate-holder">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Ismail CHAROUQ
-                        </p>
+                        <h3 class="certificate-title">Strategies for Mixed-Abilities in Teenage Classrooms</h3>
+                        <p class="certificate-issuer">CALLIOPE & HELBLING • Dr Herbert Puchta</p>
+                        <p class="certificate-date">March 2, 2024</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal reveal-delay-3">
-                    <div class="certificate-badge">
-                        <div class="certificate-icon">🏅</div>
-                        <div class="certificate-name">Intermediate 6 - Unit 3</div>
-                    </div>
+                    <img src="IMG-20240302-WA0057.jpg" alt="Oxford Professional Development Training Certificate" class="certificate-image" loading="lazy">
                     <div class="certificate-info">
-                        <h3 class="certificate-title">English Language Proficiency Badge</h3>
-                        <p class="certificate-issuer">American Language Center</p>
-                        <p class="certificate-holder">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            Ismail CHAROUQ
-                        </p>
+                        <h3 class="certificate-title">The Importance of Connection in the Primary Classroom</h3>
+                        <p class="certificate-issuer">Oxford University Press • Cheryl Palin</p>
+                        <p class="certificate-date">March 1, 2024 • 90 Minutes</p>
+                    </div>
+                </div>
+                <div class="certificate-card reveal">
+                    <img src="IMG-20240302-WA0058.jpg" alt="Teaching Young Learners Certificate" class="certificate-image" loading="lazy">
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Best Practices for Teaching Young Learners</h3>
+                        <p class="certificate-issuer">CALLIOPE & National Geographic Learning • Elly Setterfield</p>
+                        <p class="certificate-date">February 10, 2024</p>
+                    </div>
+                </div>
+                <div class="certificate-card reveal reveal-delay-1">
+                    <img src="IMG-20240303-WA0017.jpg" alt="Teaching Students for Tomorrow Seminar Certificate" class="certificate-image" loading="lazy">
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Teaching the Students of Today for the Ever-Changing World of Tomorrow</h3>
+                        <p class="certificate-issuer">Express Publishing, Bookland & Express DigiBooks</p>
+                        <p class="certificate-date">March 3, 2024</p>
                     </div>
                 </div>
             </div>
@@ -2155,7 +2149,7 @@
                             <div class="contact-item-icon">📧</div>
                             <div class="contact-item-content">
                                 <h4>Email</h4>
-                                <p><a href="mailto:contact@ismailcharouq.com">contact@ismailcharouq.com</a></p>
+                                <p><a href="mailto:charouq.ismail@gmail.com">charouq.ismail@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
