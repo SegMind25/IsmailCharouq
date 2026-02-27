@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ismail CHAROUQ - TESOL-Certified English Teacher | Student at Faculty of Sciences and Humanities | Passionate educator dedicated to inspiring future learners">
+    <meta name="description" content="Ismail Charouq - TESOL-Certified English Teacher | Student at Faculty of Sciences and Humanities | Passionate educator dedicated to inspiring future learners">
     <meta name="keywords" content="English Teacher, TESOL, ESL, Education, Ismail Charouq, Language Learning">
-    <meta name="author" content="Ismail CHAROUQ">
+    <meta name="author" content="Ismail Charouq">
     <meta name="robots" content="index, follow">
-    
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ismail CHAROUQ | TESOL-Certified English Teacher">
+    <meta property="og:title" content="Ismail Charouq - TESOL-Certified English Teacher">
     <meta property="og:description" content="Passionate English educator dedicated to inspiring and empowering future learners through engaging communication.">
-    
-    <title>Ismail CHAROUQ | TESOL-Certified English Teacher</title>
+
+    <title>Ismail Charouq - TESOL-Certified English Teacher</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1634,6 +1634,105 @@
             outline: 2px solid var(--color-accent);
             outline-offset: 2px;
         }
+
+        /* ============================================
+           DARK MODE STYLES
+           ============================================ */
+        body.dark-mode {
+            --color-text-primary: #f7fafc;
+            --color-text-secondary: #e2e8f0;
+            --color-text-muted: #a0aec0;
+            --color-text-light: #1a202c;
+
+            --color-bg-primary: #1a202c;
+            --color-bg-secondary: #2d3748;
+            --color-bg-tertiary: #4a5568;
+            --color-bg-dark: #0f2744;
+
+            --color-primary: #90cdf4;
+            --color-primary-light: #63b3ed;
+            --color-primary-dark: #2c5282;
+        }
+
+        body.dark-mode .navbar.scrolled {
+            background-color: rgba(26, 32, 44, 0.98);
+        }
+
+        body.dark-mode .navbar-menu {
+            background: var(--color-bg-primary);
+        }
+
+        body.dark-mode .timeline::before {
+            background: linear-gradient(to bottom, var(--color-accent), var(--color-primary-light));
+        }
+
+        body.dark-mode .hero-floating-card {
+            background: rgba(45, 55, 72, 0.95);
+        }
+
+        body.dark-mode .floating-card-text {
+            color: var(--color-text-muted);
+        }
+
+        body.dark-mode .floating-card-value {
+            color: var(--color-text-light);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+            color: var(--color-bg-primary);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-base);
+            z-index: 999;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(214, 158, 46, 0.5);
+        }
+
+        .theme-toggle svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        body.dark-mode .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        body.dark-mode .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 48px;
+                height: 48px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1657,6 +1756,24 @@
             </button>
         </div>
     </nav>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -1717,23 +1834,23 @@
                 <div class="about-image reveal">
                     <img src="Eaglyy.png" alt="Ismail Charouq" class="about-image-main">
                     <div class="about-experience-badge">
-                        <div class="number">12th</div>
-                        <div class="text">Grade Student</div>
+                        <div class="number">Uni</div>
+                        <div class="text">Student</div>
                     </div>
                 </div>
                 <div class="about-content reveal reveal-delay-1">
                     <span class="about-label">About Me</span>
-                    <h2 class="about-title">Empowering Students Through Language Excellence</h2>
+                    <h2 class="about-title">Helping Students Master English with Confidence</h2>
                     <p class="about-description">
-                        As a dynamic 12th-grade student specializing in physics with a focus on French, 
-                        I bring a diverse skill set to the table. With certification from the esteemed 
-                        American TESOL Academy, I've honed my English teaching abilities and cultivated 
+                        As a dynamic university student specializing in physics with a focus on French,
+                        I bring a diverse skill set to the table. With certification from the esteemed
+                        American TESOL Academy, I've honed my English teaching abilities and cultivated
                         a flair for captivating public presentations.
                     </p>
                     <p class="about-description">
-                        My passion for education extends beyond the classroom, as I aspire to inspire 
-                        and empower future learners through engaging and effective communication. 
-                        Eager to bring my enthusiasm, creativity, and dedication to a forward-thinking 
+                        My passion for education extends beyond the classroom, as I aspire to inspire
+                        and empower future learners through engaging and effective communication.
+                        Eager to bring my enthusiasm, creativity, and dedication to a forward-thinking
                         educational institution.
                     </p>
                     <div class="about-stats">
@@ -1898,10 +2015,10 @@
                         <div class="skill-item">
                             <div class="skill-header">
                                 <span class="skill-name">French</span>
-                                <span class="skill-percentage">Intermediate</span>
+                                <span class="skill-percentage">Working Knowledge</span>
                             </div>
                             <div class="skill-bar">
-                                <div class="skill-bar-fill" data-width="75"></div>
+                                <div class="skill-bar-fill" data-width="60"></div>
                             </div>
                         </div>
                     </div>
@@ -1960,7 +2077,7 @@
                     <div class="certificate-info">
                         <h3 class="certificate-title">Classroom Management and Discipline Problems</h3>
                         <p class="certificate-issuer">American TESOL Academy & CALLIOPE</p>
-                        <p class="certificate-date">February 11, 2024 • 4 Hours</p>
+                        <p class="certificate-date">February 11, 2024</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal reveal-delay-1">
@@ -1968,7 +2085,7 @@
                     <div class="certificate-info">
                         <h3 class="certificate-title">Beyond Borders: Global Perspectives on Innovation in ELT</h3>
                         <p class="certificate-issuer">American TESOL Academy, Global Bus Foundation & CALLIOPE</p>
-                        <p class="certificate-date">April 21-22, 2024 • 12 Hours</p>
+                        <p class="certificate-date">April 21-22, 2024</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal reveal-delay-2">
@@ -1984,7 +2101,7 @@
                     <div class="certificate-info">
                         <h3 class="certificate-title">The Importance of Connection in the Primary Classroom</h3>
                         <p class="certificate-issuer">Oxford University Press • Cheryl Palin</p>
-                        <p class="certificate-date">March 1, 2024 • 90 Minutes</p>
+                        <p class="certificate-date">March 1, 2024</p>
                     </div>
                 </div>
                 <div class="certificate-card reveal">
@@ -2169,7 +2286,9 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper reveal reveal-delay-1">
-                    <form class="contact-form" id="contactForm" action="#" method="POST">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/charouq.ismail@gmail.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <div class="form-row">
                             <div class="form-group">
                                 <label class="form-label" for="firstName">First Name</label>
@@ -2252,7 +2371,7 @@
             </div>
             <div class="footer-bottom">
                 <p class="footer-copyright">
-                    © 2024 Ismail CHAROUQ. All rights reserved.
+                    © 2024 Ismail Charouq. All rights reserved.
                 </p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
@@ -2281,6 +2400,25 @@
             const contactForm = document.getElementById('contactForm');
             const skillBars = document.querySelectorAll('.skill-bar-fill');
             const revealElements = document.querySelectorAll('.reveal');
+            const themeToggle = document.getElementById('themeToggle');
+
+            // ============================================
+            // THEME TOGGLE
+            // ============================================
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+
+            function toggleTheme() {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            }
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', toggleTheme);
+            }
 
             // ============================================
             // NAVBAR SCROLL EFFECT
@@ -2385,37 +2523,21 @@
             // ============================================
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Get form values
-                    const formData = new FormData(this);
-                    const data = Object.fromEntries(formData.entries());
-                    
-                    // Basic validation
-                    if (!data.firstName || !data.lastName || !data.email || !data.message) {
-                        showNotification('Please fill in all required fields.', 'error');
-                        return;
-                    }
-
-                    // Email validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(data.email)) {
-                        showNotification('Please enter a valid email address.', 'error');
-                        return;
-                    }
-
-                    // Simulate form submission (replace with actual API call)
+                    // Let the form submit to FormSubmit.co
+                    // The form will redirect to FormSubmit's success page
                     const submitButton = this.querySelector('.btn-submit');
                     const originalText = submitButton.innerHTML;
                     submitButton.innerHTML = 'Sending...';
                     submitButton.disabled = true;
 
+                    // Show notification that email will be sent
+                    showNotification('Redirecting to secure email submission...', 'info');
+                    
+                    // Reset button after delay (in case of redirect issues)
                     setTimeout(() => {
-                        showNotification('Thank you! Your message has been sent successfully.', 'success');
-                        contactForm.reset();
                         submitButton.innerHTML = originalText;
                         submitButton.disabled = false;
-                    }, 1500);
+                    }, 3000);
                 });
             }
 
