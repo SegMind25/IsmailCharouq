@@ -1191,7 +1191,25 @@
             color: var(--color-text-secondary);
             line-height: 1.8;
             font-style: italic;
+            margin-bottom: var(--space-lg);
+        }
+
+        .testimonial-image {
             margin-bottom: var(--space-xl);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform var(--transition-base);
+        }
+
+        .testimonial-image:hover img {
+            transform: scale(1.02);
         }
 
         .testimonial-author {
@@ -1953,8 +1971,9 @@
                     <span class="about-label">About Me</span>
                     <h2 class="about-title">Helping Students Master English with Confidence</h2>
                     <p class="about-description">
-                        With certification from the esteemed American TESOL Academy, I've honed my 
-                        English teaching abilities and cultivated a flair for captivating public presentations.
+                        I bring a diverse skill set to the table. With certification from the esteemed
+                        American TESOL Academy, I've honed my English teaching abilities and cultivated
+                        a flair for captivating public presentations.
                     </p>
                     <p class="about-description">
                         My passion for education extends beyond the classroom, as I aspire to inspire
@@ -2303,20 +2322,23 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Testimonials</span>
-                <h2 class="section-title">What Students Say</h2>
+                <h2 class="section-title">What Students & Colleagues Say</h2>
                 <p class="section-subtitle">Feedback from students and colleagues about the learning experience</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card reveal">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">
-                        Ismail's teaching approach is incredibly engaging. His ability to explain complex grammar concepts in simple terms helped me improve my English significantly.
+                        Dr. Lhoussine Qasserras is an outstanding University Professor and TESOL Trainer. His expertise in language education and dedication to student success are truly remarkable.
                     </p>
+                    <div class="testimonial-image">
+                        <img src="1stComment.png" alt="Comment from Dr. Lhoussine Qasserras">
+                    </div>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-avatar">LQ</div>
                         <div class="testimonial-info">
-                            <h4>Ahmed M.</h4>
-                            <p>ESL Student</p>
+                            <h4>Dr. Lhoussine Qasserras</h4>
+                            <p>University Professor & TESOL Trainer</p>
                             <div class="testimonial-rating">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
@@ -2326,29 +2348,16 @@
                 <div class="testimonial-card reveal reveal-delay-1">
                     <div class="testimonial-quote">"</div>
                     <p class="testimonial-text">
-                        The lessons are always well-structured and fun. I've gained so much confidence in speaking English thanks to Ismail's supportive teaching style.
+                        Reese Hollister brings a unique perspective as a Historian, Language Learner, and Educator. His insights into language acquisition and teaching methodologies are invaluable.
                     </p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">F</div>
-                        <div class="testimonial-info">
-                            <h4>Fatima Z.</h4>
-                            <p>Business English Student</p>
-                            <div class="testimonial-rating">
-                                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                            </div>
-                        </div>
+                    <div class="testimonial-image">
+                        <img src="2ndComment.png" alt="Comment from Reese Hollister">
                     </div>
-                </div>
-                <div class="testimonial-card reveal reveal-delay-2">
-                    <div class="testimonial-quote">"</div>
-                    <p class="testimonial-text">
-                        His dedication to student success is remarkable. The personalized attention and practical exercises made learning English an enjoyable experience.
-                    </p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">O</div>
+                        <div class="testimonial-avatar">RH</div>
                         <div class="testimonial-info">
-                            <h4>Omar K.</h4>
-                            <p>Test Prep Student</p>
+                            <h4>Reese Hollister</h4>
+                            <p>Historian, Language Learner, Educator</p>
                             <div class="testimonial-rating">
                                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                             </div>
